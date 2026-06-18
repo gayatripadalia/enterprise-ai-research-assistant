@@ -1,67 +1,46 @@
-# Enterprise AI Research Assistant (EARA)
+# Enterprise AI Research Assistant
 
-## Overview
+Enterprise AI Research Assistant is a document processing and analysis platform designed to help users interact with information contained in various document formats. The system enables users to upload files such as PDF, DOCX, and Excel documents, extract their contents, and prepare them for intelligent analysis.
 
-Enterprise AI Research Assistant (EARA) is a project focused on building an intelligent AI-powered system capable of analyzing documents, extracting insights, answering questions, and generating reports.
+The platform is built with FastAPI and follows a modular architecture that supports document ingestion, text extraction, and AI-powered understanding. It is designed to serve as a foundation for research assistance, document summarization, information extraction, and knowledge discovery.
 
-The project aims to combine modern AI technologies such as Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Multi-Agent Systems, and Data Science techniques into a single enterprise-oriented platform.
+## Features
 
-## Goals
+* PDF document processing
+* DOCX document processing
+* Excel file processing
+* Automated text extraction
+* RESTful API architecture
+* Fast and scalable backend design
+* Support for AI-driven document understanding
 
-* Analyze PDFs, Word documents, Excel files, and other data sources
-* Generate summaries and insights
-* Build AI agents for specialized tasks
-* Implement RAG-based document understanding
-* Develop data analysis and reporting capabilities
-* Explore multimodal AI applications
-
-## Tech Stack
-
-### Frontend
-
-* React
-
-### Backend
+## Technology Stack
 
 * Python
 * FastAPI
-
-### AI & ML
-
-* LangChain
-* Hugging Face
+* Uvicorn
+* PyMuPDF
+* python-docx
 * Pandas
-* NumPy
-* Scikit-learn
+* OpenPyXL
+* Ollama
+* Llama 3
 
-### Database
+## Use Cases
 
-* SQLite
+* Research document analysis
+* Resume and CV analysis
+* Academic content processing
+* Document understanding
+* Information extraction
+* Knowledge management
 
-## Current Status
+## Architecture
 
-Project Planning and Architecture Design Phase
-
-## Repository Structure
-
-```text
-enterprise-ai-research-assistant/
-
-├── frontend/
-├── backend/
-├── database/
-├── datasets/
-├── uploads/
-├── generated_reports/
-├── docs/
-├── screenshots/
-├── README.md
-└── LICENSE
-```
+Document Upload → Text Extraction → AI Processing → Insights Generation
 
 ## Author
 
 Gayatri Padalia
-
-BCA (AI & Data Science)
+BCA (Hons.) Artificial Intelligence & Data Science
 Graphic Era Hill University
