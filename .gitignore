@@ -5,6 +5,7 @@ backend/venv/
 # Python Cache
 __pycache__/
 *.pyc
+*.pyo
 
 # Environment Variables
 .env
@@ -14,6 +15,12 @@ backend/.env
 uploads/
 backend/uploads/
 
+# VS Code
+.vscode/
+
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Logs
+*.log
