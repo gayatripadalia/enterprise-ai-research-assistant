@@ -15,3 +15,26 @@ def save_document(filename, text, summary):
 
     cursor.close()
     conn.close()
+
+def get_latest_document():
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    query = """
+    SELECT extracted_text
+    FROM documents
+    ORDER BY id DESC
+    LIMIT 1
+    """
+
+    cursor.execute(query)
+
+    result = cursor.fetchone()
+
+    cursor.close()
+    conn.close()
+
+    if result:
+        return result[0]
+
+    return None

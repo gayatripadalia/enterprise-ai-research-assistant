@@ -14,13 +14,15 @@ class ChatRequest(BaseModel):
 @router.post("/chat")
 async def chat(request: ChatRequest):
 
-    if not document_store.DOCUMENT_TEXT:
+    document_text = document_store.get_latest_document()
+
+    if not document_text:
         return {
             "error": "No document uploaded yet."
         }
 
     answer = answer_question(
-        document_store.DOCUMENT_TEXT,
+        document_text,
         request.question
     )
 

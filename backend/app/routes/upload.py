@@ -47,6 +47,6 @@ async def upload_file(file: UploadFile = File(...)):
     # STEP 3: return everything
     return {
         "filename": file.filename,
-        "extracted_text_preview": text[:1000],
+        "extracted_text_preview": text[:2000],
         "ai_summary": ai_result
     }
