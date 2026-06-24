@@ -3,9 +3,12 @@ import os
 import time
 from fastapi import APIRouter, UploadFile, File
 
+from app.utils.document_store import save_document
+
 from app.utils.file_parser import extract_text
 from app.utils.ai_analyzer import analyze_text
 import app.utils.document_store as document_store
+
 
 router = APIRouter()
 
@@ -33,6 +36,13 @@ async def upload_file(file: UploadFile = File(...)):
     print("TEXT EXTRACTED ✔")
     # STEP 2: send to AI (Ollama / Llama)
     ai_result = analyze_text(text)
+
+    save_document(
+    file.filename,
+    text,
+    ai_result
+)
+
     print("AI ANALYSIS DONE ✔")
     # STEP 3: return everything
     return {
