@@ -8,25 +8,30 @@ router = APIRouter()
 
 
 class ChatRequest(BaseModel):
+    document_id: int
     question: str
 
 
 @router.post("/chat")
 async def chat(request: ChatRequest):
 
-    document_text = document_store.get_latest_document()
+    document = document_store.get_document_by_id(
+        request.document_id
+    )
 
-    if not document_text:
+    if not document:
         return {
-            "error": "No document uploaded yet."
+            "error": "Document not found."
         }
 
     answer = answer_question(
-        document_text,
+        document["extracted_text"],
         request.question
     )
 
     return {
+        "document_id": document["id"],
+        "filename": document["filename"],
         "question": request.question,
         "answer": answer
     }
